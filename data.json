@@ -1,0 +1,117 @@
+{
+  "name": "Luis Arias",
+  "navbarName": "Yayo",
+  "tagline": "Software Developer | Problem Solver | Tech Enthusiast",
+  "roles": ["Software Developer", "Web Designer", "Problem Solver", "Tech Enthusiast"],
+  "profileImage": "..//static//profile.jpg",
+  "contact": {
+    "email": "your.email@example.com",
+    "phone": "+1 (555) 123-4567",
+    "location": "City, State",
+    "linkedin": "https://linkedin.com/in/yourprofile",
+    "github": "https://github.com/yourusername",
+    "twitter": "",
+    "website": "https://yourwebsite.com"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a passionate software developer with a love for creating elegant solutions to complex problems. With expertise in modern web technologies and a commitment to continuous learning, I strive to build applications that make a difference.",
+    "paragraphs": [
+      "Add your first paragraph about your background and experience here.",
+      "Add your second paragraph about your passions and what drives you here.",
+      "Add additional paragraphs as needed to tell your story."
+    ],
+    "cvLink": "https://drive.google.com/file/d/YOUR_FILE_ID/view",
+    "companies": [
+      {
+        "name": "Uber",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png"
+      },
+      {
+        "name": "Booking.com",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/b/be/Booking.com_logo.svg"
+      },
+      {
+        "name": "EY",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d8/EY_Logo_2019.svg"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "title": "Project One",
+      "description": "A brief description of your project, highlighting the problem it solves and the technologies used.",
+      "technologies": ["React", "Node.js", "MongoDB"],
+      "link": "https://github.com/yourusername/project-one",
+      "demo": "https://project-one-demo.com"
+    },
+    {
+      "title": "Project Two",
+      "description": "Another project showcasing your skills and creativity. Describe what makes this project unique.",
+      "technologies": ["Python", "Django", "PostgreSQL"],
+      "link": "https://github.com/yourusername/project-two",
+      "demo": ""
+    },
+    {
+      "title": "Project Three",
+      "description": "Add more projects to showcase the breadth of your experience and technical abilities.",
+      "technologies": ["JavaScript", "Vue.js", "Firebase"],
+      "link": "https://github.com/yourusername/project-three",
+      "demo": "https://project-three-demo.com"
+    }
+  ],
+  "skills": {
+    "categories": [
+      {
+        "name": "Programming Languages",
+        "items": ["JavaScript", "Python", "Java", "C++", "TypeScript"]
+      },
+      {
+        "name": "Web Technologies",
+        "items": ["React", "Vue.js", "Node.js", "HTML5", "CSS3", "REST APIs"]
+      },
+      {
+        "name": "Tools & Platforms",
+        "items": ["Git", "Docker", "AWS", "Linux", "VS Code"]
+      },
+      {
+        "name": "Databases",
+        "items": ["MongoDB", "PostgreSQL", "MySQL", "Redis"]
+      }
+    ]
+  },
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "institution": "University Name",
+      "location": "City, State",
+      "year": "2020",
+      "description": "Relevant coursework: Data Structures, Algorithms, Software Engineering, Database Systems"
+    },
+    {
+      "degree": "Master of Science in Software Engineering",
+      "institution": "University Name",
+      "location": "City, State",
+      "year": "2022",
+      "description": "Focus on distributed systems and cloud computing"
+    }
+  ],
+  "hobbies": [
+    {
+      "name": "Open Source Contribution",
+      "description": "Contributing to open source projects and learning from the community"
+    },
+    {
+      "name": "Photography",
+      "description": "Capturing moments and exploring creative composition"
+    },
+    {
+      "name": "Hiking",
+      "description": "Exploring nature trails and enjoying the outdoors"
+    },
+    {
+      "name": "Reading",
+      "description": "Technical books, sci-fi novels, and technology blogs"
+    }
+  ]
+}
