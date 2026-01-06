@@ -28,16 +28,6 @@ A clean, minimal, and professional personal portfolio website that's easy to upd
 2. Open `data.json` and update with your information
 3. Open `index.html` in a web browser
 
-For development, you can use a local server:
-
-```powershell
-# Using Python
-python -m http.server 8000
-
-# Using Node.js (http-server)
-npx http-server
-```
-
 Then visit `http://localhost:8000` in your browser.
 
 ## Updating Your Portfolio
