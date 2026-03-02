@@ -1,25 +1,42 @@
 {
   "name": "Luis Arias",
-  "navbarName": "Yayo",
-  "tagline": "Software Developer | Problem Solver | Tech Enthusiast",
-  "roles": ["Software Developer", "Web Designer", "Problem Solver", "Tech Enthusiast"],
+  "navbarName": "Luis Arias",
+  "tagline": "Strategy & Operations | Marketplace Growth | Travel & Fintech",
+  "roles": [
+    "Strategy & Operations",
+    "Program Management",
+    "Growth Strategy",
+    "Marketplace & Payments"
+  ],
   "profileImage": "..//static//profile.jpg",
   "contact": {
-    "email": "your.email@example.com",
-    "phone": "+1 (555) 123-4567",
-    "location": "City, State",
-    "linkedin": "https://linkedin.com/in/yourprofile",
-    "github": "https://github.com/yourusername",
+    "email": "luis.arias521@gmail.com",
+    "phone": "+31 0642565116",
+    "location": "Amsterdam, NL / New York City, USA",
+    "linkedin": "https://www.linkedin.com/in/arias-luis/",
+    "github": "",
     "twitter": "",
-    "website": "https://yourwebsite.com"
+    "website": "https://yourwebsite.com",
+    "whatsapp": [
+      {
+        "number": "+16467092553",
+        "link": "https://wa.me/16467092553",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      },
+      {
+        "number": "+31 0642565116",
+        "link": "https://wa.me/31642565116",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      }
+    ]
   },
   "about": {
-    "title": "About Me",
-    "description": "I'm a passionate software developer with a love for creating elegant solutions to complex problems. With expertise in modern web technologies and a commitment to continuous learning, I strive to build applications that make a difference.",
+    "title": "About",
+    "description": "I’m a strategy and operations leader with experience building and scaling tech-enabled products and marketplaces across mobility, travel, and payments. I’ve led cross-functional initiatives spanning growth, commercial strategy, and customer experience—turning ambiguous problems into clear plans, measurable results, and shipped outcomes.",
     "paragraphs": [
-      "Add your first paragraph about your background and experience here.",
-      "Add your second paragraph about your passions and what drives you here.",
-      "Add additional paragraphs as needed to tell your story."
+      "I’ve worked across global strategy, operations, and program management roles at Uber, Booking.com, and EY—often partnering closely with product, commercial teams, and analytics. My sweet spot is taking messy problems (growth, unit economics, go-to-market, customer pain points) and building operating plans teams can execute: defining the right metrics, aligning stakeholders, and driving initiatives from concept to launch.",
+      "Alongside my corporate work, I also run Luis Arias Consulting B.V., where I advise export-focused organizations and producer groups on strategy, positioning, and market access—helping them translate commodity-style offerings into differentiated propositions for EU and premium buyers.",
+      "Outside of work, I enjoy photography and travel, and I’m constantly building—whether that’s an analytical framework, a strategy memo, or a clear narrative that helps teams make better decisions faster."
     ],
     "cvLink": "https://drive.google.com/file/d/YOUR_FILE_ID/view",
     "companies": [
@@ -37,81 +54,161 @@
       }
     ]
   },
+  "selectedImpact": {
+    "title": "Selected Impact",
+    "items": [
+      {
+        "title": "Scaling Global Marketplace Initiatives",
+        "description": "Led cross-functional strategy and operations initiatives across global teams at Uber and Booking.com, driving marketplace growth across travel and mobility verticals including flights, car rentals, and payments integrations."
+      },
+      {
+        "title": "Marketplace Supply & Unit Economics Analysis",
+        "description": "Built supply health frameworks analyzing churn, vehicle activation cohorts, and 12-month lifetime value (LTV) to identify supply gaps and inform host acquisition incentives and marketplace expansion strategies."
+      },
+      {
+        "title": "Customer Service Strategy Transformation",
+        "description": "Developed a forward-looking customer service strategy focused on benchmarking service standards, optimizing process flows, and designing differentiated support experiences across customer segments and channels."
+      },
+      {
+        "title": "EU Premium Market Trade Strategy",
+        "description": "Advised export organizations and producer groups on how to move beyond commodity positioning in EU markets by defining differentiation pathways, credible sustainability narratives, and clearer buyer-facing messaging."
+      }
+    ]
+  },
   "projects": [
     {
-      "title": "Project One",
-      "description": "A brief description of your project, highlighting the problem it solves and the technologies used.",
-      "technologies": ["React", "Node.js", "MongoDB"],
-      "link": "https://github.com/yourusername/project-one",
-      "demo": "https://project-one-demo.com"
-    },
-    {
-      "title": "Project Two",
-      "description": "Another project showcasing your skills and creativity. Describe what makes this project unique.",
-      "technologies": ["Python", "Django", "PostgreSQL"],
-      "link": "https://github.com/yourusername/project-two",
+      "title": "Luis Arias Consulting B.V.",
+      "description": "A strategy and trade consulting practice focused on helping export organizations, producer groups, and trade promotion programs strengthen their positioning in EU and premium markets. Work typically combines market analysis, differentiation strategy, and practical buyer-facing messaging—helping suppliers move beyond commodity positioning and engage higher-value buyers with credible, differentiated offerings.",
+      "technologies": [
+        "Market research",
+        "Buyer segmentation",
+        "Differentiation strategy",
+        "Positioning & messaging",
+        "Workshop facilitation",
+        "Trade enablement"
+      ],
+      "link": "",
       "demo": ""
     },
     {
-      "title": "Project Three",
-      "description": "Add more projects to showcase the breadth of your experience and technical abilities.",
-      "technologies": ["JavaScript", "Vue.js", "Firebase"],
-      "link": "https://github.com/yourusername/project-three",
-      "demo": "https://project-three-demo.com"
+      "title": "Premium & Sustainable Buyer Enablement (VPSA / SIPPO)",
+      "description": "Developed educational content and strategic guidance for export stakeholders including the Vietnam Pepper and Spice Association (VPSA) and the Swiss Import Promotion Programme (SIPPO), helping producers understand how premium EU buyers evaluate suppliers and how to communicate differentiation beyond generic quality claims.",
+      "technologies": [
+        "EU buyer research",
+        "Sustainability positioning",
+        "Export readiness",
+        "Sales collateral",
+        "Training materials"
+      ],
+      "link": "",
+      "demo": ""
+    },
+    {
+      "title": "Cocoa & Walnut Differentiation Deep Dive (IPD / ISM Cologne)",
+      "description": "Prepared a strategic deep dive on cocoa and walnuts supporting Import Promotion Desk (IPD) ahead of ISM Cologne. The work helped suppliers understand what differentiation truly means in EU premium markets and prioritize concrete steps to move away from commodity positioning.",
+      "technologies": [
+        "EU market analysis",
+        "Differentiation frameworks",
+        "Value proposition design",
+        "Messaging strategy",
+        "Action planning"
+      ],
+      "link": "",
+      "demo": ""
+    },
+    {
+      "title": "US Car Rentals Growth Strategy",
+      "description": "Developed a strategic assessment identifying key barriers to growth, unmet customer needs, and priority initiatives for expanding the US car rentals marketplace.",
+      "technologies": [
+        "SQL",
+        "Excel",
+        "Google Sheets",
+        "Strategic Analysis"
+      ],
+      "link": "",
+      "demo": ""
     }
   ],
   "skills": {
     "categories": [
       {
-        "name": "Programming Languages",
-        "items": ["JavaScript", "Python", "Java", "C++", "TypeScript"]
+        "name": "Strategy & Operations",
+        "items": [
+          "Growth strategy",
+          "Go-to-market planning",
+          "Marketplace dynamics",
+          "Commercial strategy",
+          "Executive storytelling",
+          "Operating models"
+        ]
       },
       {
-        "name": "Web Technologies",
-        "items": ["React", "Vue.js", "Node.js", "HTML5", "CSS3", "REST APIs"]
+        "name": "Program Management",
+        "items": [
+          "Cross-functional leadership",
+          "Roadmapping",
+          "Stakeholder management",
+          "Governance frameworks",
+          "Launch planning"
+        ]
       },
       {
-        "name": "Tools & Platforms",
-        "items": ["Git", "Docker", "AWS", "Linux", "VS Code"]
+        "name": "Analytics & Tools",
+        "items": [
+          "SQL",
+          "Excel",
+          "Google Sheets",
+          "Data analysis",
+          "LTV & cohort analysis",
+          "Basic Python"
+        ]
       },
       {
-        "name": "Databases",
-        "items": ["MongoDB", "PostgreSQL", "MySQL", "Redis"]
+        "name": "Trade & Market Access",
+        "items": [
+          "EU premium-market positioning",
+          "Buyer segmentation",
+          "Sustainability narratives",
+          "Export readiness",
+          "Differentiation strategy"
+        ]
       }
     ]
   },
   "education": [
     {
-      "degree": "Bachelor of Science in Computer Science",
-      "institution": "University Name",
-      "location": "City, State",
-      "year": "2020",
-      "description": "Relevant coursework: Data Structures, Algorithms, Software Engineering, Database Systems"
+      "degree": "Master of Science in Structural Engineering",
+      "institution": "University of Texas at Austin",
+      "location": "Austin, TX",
+      "year": "2014",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c7/University_of_Texas_at_Austin_seal.svg",
+      "description": ""
     },
     {
-      "degree": "Master of Science in Software Engineering",
-      "institution": "University Name",
-      "location": "City, State",
-      "year": "2022",
-      "description": "Focus on distributed systems and cloud computing"
+      "degree": "Bachelor’s Degree",
+      "institution": "Columbia University",
+      "location": "New York, NY",
+      "year": "2013",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Columbia_University_shield.svg",
+      "description": ""
     }
   ],
   "hobbies": [
     {
-      "name": "Open Source Contribution",
-      "description": "Contributing to open source projects and learning from the community"
-    },
-    {
       "name": "Photography",
-      "description": "Capturing moments and exploring creative composition"
+      "description": "Street and travel photography, experimenting with composition and storytelling."
     },
     {
-      "name": "Hiking",
-      "description": "Exploring nature trails and enjoying the outdoors"
+      "name": "Travel",
+      "description": "Exploring new cities and cultures, often combining food, history, and architecture."
+    },
+    {
+      "name": "Fitness",
+      "description": "Strength training focused on building lean muscle and maintaining an active lifestyle."
     },
     {
       "name": "Reading",
-      "description": "Technical books, sci-fi novels, and technology blogs"
+      "description": "Emotionally compelling contemporary fiction and memoirs."
     }
   ]
 }
