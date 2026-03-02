@@ -1,485 +1,366 @@
 // Typewriter effect
 class Typewriter {
-    constructor(element, words, wait = 3000) {
-        this.element = element;
-        this.words = words;
-        this.text = '';
-        this.wordIndex = 0;
-        this.wait = parseInt(wait, 10);
-        this.isDeleting = false;
-        this.type();
+  constructor(element, words, wait = 2500) {
+    this.element = element;
+    this.words = words;
+    this.text = "";
+    this.wordIndex = 0;
+    this.wait = parseInt(wait, 10);
+    this.isDeleting = false;
+    this.type();
+  }
+
+  type() {
+    const current = this.wordIndex % this.words.length;
+    const fullText = this.words[current];
+
+    this.text = this.isDeleting
+      ? fullText.substring(0, this.text.length - 1)
+      : fullText.substring(0, this.text.length + 1);
+
+    this.element.textContent = this.text;
+
+    let typeSpeed = this.isDeleting ? 75 : 140;
+
+    if (!this.isDeleting && this.text === fullText) {
+      typeSpeed = this.wait;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.text === "") {
+      this.isDeleting = false;
+      this.wordIndex++;
+      typeSpeed = 350;
     }
 
-    type() {
-        const current = this.wordIndex % this.words.length;
-        const fullText = this.words[current];
-
-        if (this.isDeleting) {
-            this.text = fullText.substring(0, this.text.length - 1);
-        } else {
-            this.text = fullText.substring(0, this.text.length + 1);
-        }
-
-        this.element.textContent = this.text;
-
-        let typeSpeed = 150;
-
-        if (this.isDeleting) {
-            typeSpeed /= 2;
-        }
-
-        if (!this.isDeleting && this.text === fullText) {
-            typeSpeed = this.wait;
-            this.isDeleting = true;
-        } else if (this.isDeleting && this.text === '') {
-            this.isDeleting = false;
-            this.wordIndex++;
-            typeSpeed = 500;
-        }
-
-        setTimeout(() => this.type(), typeSpeed);
-    }
+    setTimeout(() => this.type(), typeSpeed);
+  }
 }
 
-// Load portfolio data from data.json
 async function loadPortfolioData() {
-    try {
-        const response = await fetch('data.json');
-        const data = await response.json();
-        populatePortfolio(data);
-    } catch (error) {
-        console.error('Error loading portfolio data:', error);
-        document.querySelector('.main-content').innerHTML = 
-            '<div style="text-align: center; padding: 2rem; color: white;"><h2>Error loading portfolio data. Please check that data.json exists.</h2></div>';
+  try {
+    const response = await fetch("./data.json", { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+    populatePortfolio(data);
+  } catch (error) {
+    console.error("Error loading portfolio data:", error);
+    const main = document.querySelector(".main-content");
+    if (main) {
+      main.innerHTML =
+        "<div class='container' style='padding: 40px 0;'><h2>Error loading portfolio data.</h2><p>Please check that <code>data.json</code> exists and is valid JSON.</p></div>";
     }
+  }
 }
 
-// Populate all sections of the portfolio
 function populatePortfolio(data) {
-    // Set page title
-    document.title = `${data.name} - Portfolio`;
-    
-    // Populate navbar
-    populateNavbar(data);
-    
-    // Populate hero section
-    populateHero(data);
-    
-    // Populate about section
-    populateAbout(data);
+  document.title = `${data.name} - Portfolio`;
 
-    // Populate selected impact (NEW)
-    populateSelectedImpact(data.selectedImpact);
-    
-    // Populate projects
-    populateProjects(data.projects);
-    
-    // Populate skills
-    populateSkills(data.skills);
-    
-    // Populate education
-    populateEducation(data.education);
-    
-    // Populate hobbies
-    populateHobbies(data.hobbies);
-    
-    // Populate contact
-    populateContact(data);
-    
-    // Update footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('footer-name').textContent = data.name;
+  populateNavbar(data);
+  populateHero(data);
+  populateAbout(data);
+  populateSelectedImpact(data.selectedImpact);
+  populateProjects(data.projects);
+  populateSkills(data.skills);
+  populateEducation(data.education);
+  populateHobbies(data.hobbies);
+  populateContact(data);
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("footer-name").textContent = data.name;
 }
 
-// Populate navbar
 function populateNavbar(data) {
-    const brandName = document.getElementById('brand-name');
-    const brandInitial = document.getElementById('brand-initial');
-    const navbarSocial = document.getElementById('navbar-social');
-    
-    // Use navbarName if provided, otherwise use name
-    const displayName = data.navbarName || data.name;
-    brandName.textContent = displayName;
-    
-    // Set brand initial
-    if (data.profileImage) {
-        document.getElementById('brand-image').innerHTML = `<img src="${data.profileImage}" alt="${displayName}">`;
-    } else {
-        brandInitial.textContent = displayName.charAt(0).toUpperCase();
-    }
-    
-    // Add social links
-    let socialHTML = '';
-    if (data.contact.github) {
-        socialHTML += `<a href="${data.contact.github}" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-github"></i></a>`;
-    }
-    if (data.contact.linkedin) {
-        socialHTML += `<a href="${data.contact.linkedin}" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-linkedin-in"></i></a>`;
-    }
-    if (data.contact.twitter) {
-        socialHTML += `<a href="${data.contact.twitter}" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-twitter"></i></a>`;
-    }
-    
-    navbarSocial.innerHTML = socialHTML;
+  const brandName = document.getElementById("brand-name");
+  const brandInitial = document.getElementById("brand-initial");
+  const navbarSocial = document.getElementById("navbar-social");
+  const brandImage = document.getElementById("brand-image");
+
+  const displayName = data.navbarName || data.name;
+  brandName.textContent = displayName;
+
+  if (data.profileImage) {
+    brandImage.innerHTML = `<img src="${data.profileImage}" alt="${displayName}" />`;
+  } else {
+    brandInitial.textContent = displayName.charAt(0).toUpperCase();
+  }
+
+  const c = data.contact || {};
+  let socialHTML = "";
+  if (c.linkedin) socialHTML += `<a class="social-link" href="${c.linkedin}" target="_blank" rel="noopener noreferrer">in</a>`;
+  if (c.github) socialHTML += `<a class="social-link" href="${c.github}" target="_blank" rel="noopener noreferrer">GH</a>`;
+  if (c.twitter) socialHTML += `<a class="social-link" href="${c.twitter}" target="_blank" rel="noopener noreferrer">X</a>`;
+  navbarSocial.innerHTML = socialHTML;
 }
 
-// Populate hero section
 function populateHero(data) {
-    const heroName = document.getElementById('hero-name');
-    const typewriterElement = document.getElementById('typewriter');
-    
-    heroName.textContent = data.name;
-    
-    // Initialize typewriter effect
-    const roles = data.roles || [data.tagline || 'Developer', 'Designer', 'Creator'];
-    new Typewriter(typewriterElement, roles, 2000);
+  document.getElementById("hero-name").textContent = data.name;
+  const typewriterElement = document.getElementById("typewriter");
+  const roles = (data.roles && data.roles.length ? data.roles : [data.tagline || "Operator"]);
+  new Typewriter(typewriterElement, roles, 2000);
 }
 
-// Populate about section
 function populateAbout(data) {
-    const aboutContent = document.getElementById('about-content');
-    const aboutInitial = document.getElementById('about-initial');
+  const aboutContent = document.getElementById("about-content");
+  const aboutInitial = document.getElementById("about-initial");
+  const aboutImage = document.getElementById("about-image");
 
-function populateSelectedImpact(selectedImpact) {
-  const impactContainer = document.getElementById('impact-container');
-  const impactTitle = document.getElementById('impact-title');
-
-  // If your HTML doesn't have this section yet, this will safely no-op.
-  if (!impactContainer) return;
-
-  if (!selectedImpact || !selectedImpact.items || selectedImpact.items.length === 0) {
-    impactContainer.innerHTML = `
-      <p class="muted">No impact items to display yet.</p>
-    `;
-    return;
+  const img = (data.about && data.about.image) || data.profileImage;
+  if (img) {
+    aboutImage.innerHTML = `<img src="${img}" alt="${data.name}" />`;
+  } else {
+    aboutInitial.textContent = data.name.charAt(0).toUpperCase();
   }
 
-  if (impactTitle && selectedImpact.title) {
-    impactTitle.textContent = selectedImpact.title;
-  }
+  const about = data.about || {};
+  let html = "";
 
-  impactContainer.innerHTML = selectedImpact.items
-    .map(item => `
-      <div class="card">
-        <h3>${item.title}</h3>
-        <p>${item.description}</p>
-      </div>
-    `)
-    .join('');
-}
-    
-    // Set about image
-    if (data.profileImage || data.about.image) {
-        const img = data.about.image || data.profileImage;
-        document.getElementById('about-image').innerHTML = `<img src="${img}" alt="${data.name}">`;
-    } else {
-        aboutInitial.textContent = data.name.charAt(0).toUpperCase();
-    }
-    
-    let html = '';
-    if (data.about.description) {
-        html += `<p><strong>${data.about.description}</strong></p>`;
-    }
-    
-    if (data.about.paragraphs && data.about.paragraphs.length > 0) {
-        data.about.paragraphs.forEach(paragraph => {
-            if (paragraph) {
-                html += `<p>${paragraph}</p>`;
-            }
-        });
-    }
-    
-    // Add CV download button if cvLink is provided
-    if (data.about.cvLink) {
-        html += `
-            <div class="cv-download">
-                <a href="${data.about.cvLink}" target="_blank" rel="noopener noreferrer" class="cv-button">
-                    <i class="fas fa-download"></i>
-                    Download CV
-                </a>
-            </div>
-        `;
-    }
-    
-    // Add company logos if companies are provided
-    if (data.about.companies && data.about.companies.length > 0) {
-        html += `
-            <div class="companies-section">
-                <p class="companies-label">Previously worked at</p>
-                <div class="companies-logos">
-                    ${data.about.companies.map(company => `
-                        <div class="company-logo-wrapper" title="${company.name}">
-                            <img src="${company.logo}" alt="${company.name}" class="company-logo">
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-        `;
-    }
-    
-    aboutContent.innerHTML = html;
-}
+  if (about.description) html += `<p><strong>${about.description}</strong></p>`;
 
-// Populate projects section
-function populateProjects(projects) {
-    const projectsContainer = document.getElementById('projects-container');
-    
-    if (!projects || projects.length === 0) {
-        projectsContainer.innerHTML = '<p style="color: var(--text-muted);">No projects to display yet.</p>';
-        return;
-    }
-    
-    let html = '';
-    projects.forEach(project => {
-        html += `
-            <div class="project-card">
-                <h3 class="project-title">${project.title}</h3>
-                <p class="project-description">${project.description}</p>
-                ${project.technologies && project.technologies.length > 0 ? `
-                    <div class="project-technologies">
-                        ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
-                    </div>
-                ` : ''}
-                <div class="project-links">
-                    ${project.link ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fas fa-code"></i> View Code</a>` : ''}
-                    ${project.demo ? `<a href="${project.demo}" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>` : ''}
-                </div>
-            </div>
-        `;
+  if (about.paragraphs?.length) {
+    about.paragraphs.forEach((p) => {
+      if (p) html += `<p>${p}</p>`;
     });
-    
-    projectsContainer.innerHTML = html;
-}
-
-// Populate skills section
-function populateSkills(skills) {
-    const skillsContainer = document.getElementById('skills-container');
-    
-    if (!skills || !skills.categories || skills.categories.length === 0) {
-        skillsContainer.innerHTML = '<p style="color: var(--text-muted);">No skills to display yet.</p>';
-        return;
-    }
-    
-    let html = '';
-    skills.categories.forEach(category => {
-        html += `
-            <div class="skill-category">
-                <h3 class="skill-category-name">${category.name}</h3>
-                <div class="skill-items">
-                    ${category.items.map(item => `<span class="skill-item">${item}</span>`).join('')}
-                </div>
-            </div>
-        `;
-    });
-    
-    skillsContainer.innerHTML = html;
-}
-
-// Populate education section
-function populateEducation(education) {
-  const educationContainer = document.getElementById('education-container');
-  if (!education || education.length === 0) {
-    educationContainer.innerHTML = `
-      <p>No education information to display yet.</p>
-    `;
-    return;
   }
 
-  let html = '';
-  education.forEach(item => {
+  if (about.cvLink) {
     html += `
-      <div class="education-item">
-        ${item.logo ? `<img class="edu-logo" src="${item.logo}" alt="${item.institution} logo">` : ''}
-        <div class="education-text">
-          <h3>${item.degree}</h3>
-          <p><strong>${item.institution}</strong></p>
-          <p class="muted">${item.location} • ${item.year}</p>
-          ${item.description ? `<p>${item.description}</p>` : ''}
+      <div class="cv-download">
+        <a class="cv-button" href="${about.cvLink}" target="_blank" rel="noopener noreferrer">Download CV</a>
+      </div>
+    `;
+  }
+
+  if (about.companies?.length) {
+    html += `
+      <div class="companies-section">
+        <div class="companies-label">Previously worked at</div>
+        <div class="companies-logos">
+          ${about.companies
+            .map(
+              (co) => `
+              <div class="company-logo-wrapper">
+                <img class="company-logo" src="${co.logo}" alt="${co.name} logo" />
+              </div>
+            `
+            )
+            .join("")}
         </div>
       </div>
     `;
-  });
+  }
 
-  educationContainer.innerHTML = html;
+  aboutContent.innerHTML = html;
 }
 
-// Populate hobbies section
+function populateSelectedImpact(selectedImpact) {
+  const container = document.getElementById("impact-container");
+  const title = document.getElementById("impact-title");
+  if (!container) return;
+
+  if (title && selectedImpact?.title) title.textContent = selectedImpact.title;
+
+  if (!selectedImpact?.items?.length) {
+    container.innerHTML = "";
+    return;
+  }
+
+  container.innerHTML = selectedImpact.items
+    .map(
+      (item) => `
+      <div class="project-card">
+        <div class="project-title">${item.title}</div>
+        <div class="project-description">${item.description}</div>
+      </div>
+    `
+    )
+    .join("");
+}
+
+function populateProjects(projects) {
+  const container = document.getElementById("projects-container");
+  if (!projects?.length) {
+    container.innerHTML = "";
+    return;
+  }
+
+  container.innerHTML = projects
+    .map((p) => {
+      const tech =
+        p.technologies?.length
+          ? `<div class="project-technologies">${p.technologies
+              .map((t) => `<span class="tech-tag">${t}</span>`)
+              .join("")}</div>`
+          : "";
+
+      const links =
+        p.link || p.demo
+          ? `<div class="project-links">
+              ${p.link ? `<a class="project-link" href="${p.link}" target="_blank" rel="noopener noreferrer">View</a>` : ""}
+              ${p.demo ? `<a class="project-link" href="${p.demo}" target="_blank" rel="noopener noreferrer">Demo</a>` : ""}
+            </div>`
+          : "";
+
+      return `
+        <div class="project-card">
+          <div class="project-title">${p.title}</div>
+          <div class="project-description">${p.description}</div>
+          ${tech}
+          ${links}
+        </div>
+      `;
+    })
+    .join("");
+}
+
+function populateSkills(skills) {
+  const container = document.getElementById("skills-container");
+  if (!skills?.categories?.length) {
+    container.innerHTML = "";
+    return;
+  }
+
+  container.innerHTML = skills.categories
+    .map(
+      (cat) => `
+      <div class="skill-category">
+        <div class="skill-category-name">${cat.name}</div>
+        <div class="skill-items">
+          ${(cat.items || []).map((i) => `<span class="skill-item">${i}</span>`).join("")}
+        </div>
+      </div>
+    `
+    )
+    .join("");
+}
+
+function populateEducation(education) {
+  const container = document.getElementById("education-container");
+  if (!education?.length) {
+    container.innerHTML = "";
+    return;
+  }
+
+  container.innerHTML = education
+    .map(
+      (e) => `
+      <div class="education-item">
+        ${e.logo ? `<img class="edu-logo" src="${e.logo}" alt="${e.institution} logo" />` : ""}
+        <div>
+          <div class="education-degree">${e.degree}</div>
+          <div class="education-institution">${e.institution}</div>
+          <div class="education-details">${e.location} • ${e.year}</div>
+          ${e.description ? `<div class="education-description">${e.description}</div>` : ""}
+        </div>
+      </div>
+    `
+    )
+    .join("");
+}
+
 function populateHobbies(hobbies) {
-    const hobbiesContainer = document.getElementById('hobbies-container');
-    
-    if (!hobbies || hobbies.length === 0) {
-        hobbiesContainer.innerHTML = '<p style="color: var(--text-muted);">No hobbies to display yet.</p>';
-        return;
-    }
-    
-    let html = '';
-    hobbies.forEach(hobby => {
-        html += `
-            <div class="hobby-item">
-                <h3 class="hobby-name">${hobby.name}</h3>
-                <p class="hobby-description">${hobby.description}</p>
-            </div>
-        `;
-    });
-    
-    hobbiesContainer.innerHTML = html;
+  const container = document.getElementById("hobbies-container");
+  if (!hobbies?.length) {
+    container.innerHTML = "";
+    return;
+  }
+
+  container.innerHTML = hobbies
+    .map(
+      (h) => `
+      <div class="hobby-item">
+        <div class="hobby-name">${h.name}</div>
+        <div class="hobby-description">${h.description}</div>
+      </div>
+    `
+    )
+    .join("");
 }
 
-// Populate contact section
 function populateContact(data) {
-    const contactInfo = document.getElementById('contact-info');
-    const contactSocial = document.getElementById('contact-social');
-    const contact = data.contact;
-    
-    let infoHTML = '';
-    
-    if (contact.email) {
-        infoHTML += `
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <div class="contact-label">Email</div>
-                <div class="contact-value"><a href="mailto:${contact.email}">${contact.email}</a></div>
-            </div>
-        `;
-    }
-    
-    if (contact.phone) {
-        infoHTML += `
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-phone"></i>
-                </div>
-                <div class="contact-label">Phone</div>
-                <div class="contact-value"><a href="tel:${contact.phone}">${contact.phone}</a></div>
-            </div>
-        `;
-    }
+  const contactInfo = document.getElementById("contact-info");
+  const contactSocial = document.getElementById("contact-social");
+  const c = data.contact || {};
 
-if (contact.whatsapp && Array.isArray(contact.whatsapp)) {
-  contact.whatsapp.forEach(w => {
-    socialHTML += `
-      <a href="${w.link}" target="_blank" rel="noopener noreferrer" class="social-link">
-        ${w.logo ? `<img src="${w.logo}" alt="WhatsApp" class="social-icon" />` : 'WhatsApp'}
-        <span>${w.number}</span>
-      </a>
-    `;
+  const items = [];
+  if (c.email) items.push({ label: "Email", value: `<a href="mailto:${c.email}">${c.email}</a>` });
+  if (c.phone) items.push({ label: "Phone", value: c.phone });
+  if (c.location) items.push({ label: "Location", value: c.location });
+
+  contactInfo.innerHTML = items
+    .map(
+      (it) => `
+      <div class="contact-item">
+        <div class="contact-label">${it.label}</div>
+        <div class="contact-value">${it.value}</div>
+      </div>
+    `
+    )
+    .join("");
+
+  let socialHTML = "";
+  if (c.linkedin) socialHTML += `<a class="social-link" href="${c.linkedin}" target="_blank" rel="noopener noreferrer">in</a>`;
+  if (c.github) socialHTML += `<a class="social-link" href="${c.github}" target="_blank" rel="noopener noreferrer">GH</a>`;
+  if (c.twitter) socialHTML += `<a class="social-link" href="${c.twitter}" target="_blank" rel="noopener noreferrer">X</a>`;
+  if (c.website) socialHTML += `<a class="social-link" href="${c.website}" target="_blank" rel="noopener noreferrer">↗</a>`;
+
+  // WhatsApp (supports multiple numbers)
+  if (Array.isArray(c.whatsapp)) {
+    c.whatsapp.forEach((w) => {
+      // If the logo URL fails, you still get a WA link
+      socialHTML += `<a class="social-link" href="${w.link}" target="_blank" rel="noopener noreferrer" title="WhatsApp ${w.number}">WA</a>`;
+    });
+  }
+
+  contactSocial.innerHTML = socialHTML;
+}
+
+function updateActiveNav() {
+  const sections = document.querySelectorAll(".section, .hero-section");
+  const navLinks = document.querySelectorAll(".nav-link");
+  let current = "home";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    if (window.pageYOffset >= sectionTop - 200) current = section.getAttribute("id");
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
   });
 }
-    
-    if (contact.location) {
-        infoHTML += `
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div class="contact-label">Location</div>
-                <div class="contact-value">${contact.location}</div>
-            </div>
-        `;
-    }
-    
-    contactInfo.innerHTML = infoHTML;
-    
-    // Social links
-    let socialHTML = '';
-    if (contact.github) {
-        socialHTML += `<a href="${contact.github}" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-github"></i></a>`;
-    }
-    if (contact.linkedin) {
-        socialHTML += `<a href="${contact.linkedin}" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-linkedin-in"></i></a>`;
-    }
-    if (contact.twitter) {
-        socialHTML += `<a href="${contact.twitter}" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-twitter"></i></a>`;
-    }
-    if (contact.website) {
-        socialHTML += `<a href="${contact.website}" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fas fa-globe"></i></a>`;
-    }
-    
-    contactSocial.innerHTML = socialHTML;
-}
 
-// Navigation active state on scroll
-function updateActiveNav() {
-    const sections = document.querySelectorAll('.section, .hero-section');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 200)) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-}
-
-// Mobile menu toggle
 function initMobileMenu() {
-    const toggle = document.querySelector('.mobile-menu-toggle');
-    const navbarMenu = document.querySelector('.navbar-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    if (!toggle) return;
-    
-    toggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        navbarMenu.classList.toggle('active');
-    });
-    
-    // Close menu when clicking a nav link on mobile
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                navbarMenu.classList.remove('active');
-            }
-        });
-    });
-    
-    // Close menu when clicking outside on mobile
-    document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
-            if (!navbarMenu.contains(e.target) && !toggle.contains(e.target)) {
-                navbarMenu.classList.remove('active');
-            }
-        }
-    });
+  const toggle = document.querySelector(".mobile-menu-toggle");
+  const navbarMenu = document.querySelector(".navbar-menu");
+  if (!toggle || !navbarMenu) return;
+
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    navbarMenu.classList.toggle("active");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (window.innerWidth <= 768) {
+      if (!navbarMenu.contains(e.target) && !toggle.contains(e.target)) {
+        navbarMenu.classList.remove("active");
+      }
+    }
+  });
 }
 
-// Smooth scrolling for navigation links
 function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute("href"));
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
     });
+  });
 }
 
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    loadPortfolioData();
-    initMobileMenu();
-    initSmoothScroll();
-    
-    // Update active nav on scroll
-    window.addEventListener('scroll', updateActiveNav);
-    
-    // Initial call to set active nav
-    setTimeout(updateActiveNav, 100);
+document.addEventListener("DOMContentLoaded", () => {
+  loadPortfolioData();
+  initMobileMenu();
+  initSmoothScroll();
+  window.addEventListener("scroll", updateActiveNav);
+  setTimeout(updateActiveNav, 100);
 });
