@@ -1,143 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal Portfolio">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 14.4px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff; min-height: 17.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.1px; font: 13.2px 'Helvetica Neue'; color: #212f3f; -webkit-text-stroke: #212f3f; min-height: 16.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.3px; font: 10.8px 'Helvetica Neue'; color: #22458e; -webkit-text-stroke: #22458e}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.3px; font: 10.8px 'Helvetica Neue'; color: #59626a; -webkit-text-stroke: #59626a}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 32.0px; font: 20.0px '.SF NS'; color: #59626a; -webkit-text-stroke: #59626a}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 24.0px; font: 15.0px 'Helvetica Neue'; color: #212f3f; -webkit-text-stroke: #212f3f; min-height: 18.0px}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 51.2px; font: 32.0px 'Helvetica Neue'; color: #212f3f; -webkit-text-stroke: #212f3f; background-color: #ffffff}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 24.0px; font: 15.0px 'Helvetica Neue'; color: #212f3f; -webkit-text-stroke: #212f3f; background-color: #22458e; min-height: 18.0px}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 86.4px; font: 54.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff; min-height: 63.0px}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 20.4px; font: 12.0px 'Helvetica Neue'; color: #59626a; -webkit-text-stroke: #59626a; min-height: 15.0px}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 51.2px; font: 32.0px 'Helvetica Neue'; color: #212f3f; -webkit-text-stroke: #212f3f; background-color: #eef0f2}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 24.0px; font: 15.0px 'Helvetica Neue'; color: #212f3f; -webkit-text-stroke: #212f3f; min-height: 18.0px}
+    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 17.3px; font: 10.8px 'Helvetica Neue'; color: #ffffff; color: rgba(255, 255, 255, 0.8); -webkit-text-stroke: rgba(255, 255, 255, 0.8)}
+    span.s1 {font-kerning: none}
+    span.s2 {font-kerning: none; background-color: #ffffff}
+    span.s3 {font-kerning: none; color: #22458e; -webkit-text-stroke: 0px #22458e}
+    span.s4 {font-kerning: none; background-color: #172b4c}
+  </style>
 </head>
 <body>
-    <!-- Top Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="navbar-container">
-            <div class="navbar-brand">
-                <div class="brand-image" id="brand-image">
-                    <span class="brand-initial" id="brand-initial"></span>
-                </div>
-                <span class="brand-name" id="brand-name"></span>
-            </div>
-            
-            <div class="mobile-menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            
-            <div class="navbar-menu" id="navbar-menu">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#hobbies" class="nav-link">Hobbies</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            
-            <div class="navbar-social" id="navbar-social"></div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="main-content" style="margin-left: 0; padding-top: 80px;">
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-name" id="hero-name"></h1>
-                <div class="hero-tagline">
-                    <span class="tagline-prefix">I'm a </span>
-                    <span class="typewriter" id="typewriter"></span>
-                    <span class="cursor">|</span>
-                </div>
-            </div>
-            <div class="scroll-indicator">
-                <a href="#about">
-                    <i class="fas fa-chevron-down"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section about-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">About Me</h2>
-                    <div class="title-underline"></div>
-                </div>
-                <div class="about-grid">
-                    <div class="about-image-wrapper">
-                        <div class="about-image" id="about-image">
-                            <span class="about-initial" id="about-initial"></span>
-                        </div>
-                    </div>
-                    <div class="about-content" id="about-content"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section projects-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">My Projects</h2>
-                    <div class="title-underline"></div>
-                </div>
-                <div id="projects-container" class="projects-grid"></div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section skills-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Skills</h2>
-                    <div class="title-underline"></div>
-                </div>
-                <div id="skills-container" class="skills-grid"></div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="section education-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Education</h2>
-                    <div class="title-underline"></div>
-                </div>
-                <div id="education-container" class="education-timeline"></div>
-            </div>
-        </section>
-
-        <!-- Hobbies Section -->
-        <section id="hobbies" class="section hobbies-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Hobbies & Interests</h2>
-                    <div class="title-underline"></div>
-                </div>
-                <div id="hobbies-container" class="hobbies-grid"></div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section contact-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Get In Touch</h2>
-                    <div class="title-underline"></div>
-                </div>
-                <div class="contact-content">
-                    <div id="contact-info" class="contact-info"></div>
-                    <div id="contact-social" class="contact-social"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; <span id="year"></span> <span id="footer-name"></span>. All rights reserved.</p>
-        </footer>
-    </main>
-
-    <script src="script.js"></script>
+<p class="p1"><span class="s1"><b></b></span><br></p>
+<p class="p2"><span class="s1"><b></b></span><br></p>
+<p class="p3"><span class="s2">Home</span></p>
+<p class="p4"><span class="s2">About</span></p>
+<p class="p4"><span class="s2">Projects</span></p>
+<p class="p4"><span class="s2">Skills</span></p>
+<p class="p4"><span class="s2">Education</span></p>
+<p class="p4"><span class="s2">Hobbies</span></p>
+<p class="p4"><span class="s2">Contact</span></p>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; text-align: center; line-height: 76.8px; font: 48.0px 'Helvetica Neue'; color: #212f3f; -webkit-text-stroke: #212f3f; min-height: 56.0px"><span class="s1"><b></b></span><br></h1>
+<p class="p6"><span class="s1">I'm a </span><span class="s3">|</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1"><b>About Me</b></span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p10"><span class="s1"><b></b></span><br></p>
+<p class="p11"><span class="s1"></span><br></p>
+<p class="p12"><span class="s1"><b>My Projects</b></span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1"><b>Skills</b></span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p12"><span class="s1"><b>Education</b></span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1"><b>Hobbies &amp; Interests</b></span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p12"><span class="s1"><b>Get In Touch</b></span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p13"><span class="s1"></span><br></p>
+<p class="p14"><span class="s4">© . All rights reserved.</span></p>
 </body>
 </html>

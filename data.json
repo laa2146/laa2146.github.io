@@ -3,16 +3,16 @@
   "navbarName": "Luis Arias",
   "tagline": "Strategy & Operations | Marketplace Growth | Travel & Fintech",
   "roles": [
-    "Strategy & Operations",
-    "Program Management",
-    "Growth Strategy",
-    "Marketplace & Payments"
+    "Strategist & Operator",
+    "Program Manager",
+    "Engineer",
+    "Marketplace & Growth Expert"
   ],
   "profileImage": "..//static//profile.jpg",
   "contact": {
     "email": "luis.arias521@gmail.com",
     "phone": "+31 0642565116",
-    "location": "Amsterdam, NL / New York City, USA",
+    "location": "Amsterdam / New York City",
     "linkedin": "https://www.linkedin.com/in/arias-luis/",
     "github": "",
     "twitter": "",
@@ -38,7 +38,7 @@
       "Alongside my corporate work, I also run Luis Arias Consulting B.V., where I advise export-focused organizations and producer groups on strategy, positioning, and market access—helping them translate commodity-style offerings into differentiated propositions for EU and premium buyers.",
       "Outside of work, I enjoy photography and travel, and I’m constantly building—whether that’s an analytical framework, a strategy memo, or a clear narrative that helps teams make better decisions faster."
     ],
-    "cvLink": "https://drive.google.com/file/d/YOUR_FILE_ID/view",
+    "cvLink": "https://drive.google.com/file/d/1gxvUYNxdqgAOcDDDkHfGBSAdPhQWZubh/view?usp=drive_link",
     "companies": [
       {
         "name": "Uber",
@@ -49,8 +49,8 @@
         "logo": "https://upload.wikimedia.org/wikipedia/commons/b/be/Booking.com_logo.svg"
       },
       {
-        "name": "EY",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d8/EY_Logo_2019.svg"
+       "name": "EY",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/3/34/EY_logo_2019.svg"
       }
     ]
   },

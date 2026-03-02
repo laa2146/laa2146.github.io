@@ -67,6 +67,9 @@ function populatePortfolio(data) {
     
     // Populate about section
     populateAbout(data);
+
+    // Populate selected impact (NEW)
+    populateSelectedImpact(data.selectedImpact);
     
     // Populate projects
     populateProjects(data.projects);
@@ -136,6 +139,34 @@ function populateHero(data) {
 function populateAbout(data) {
     const aboutContent = document.getElementById('about-content');
     const aboutInitial = document.getElementById('about-initial');
+
+function populateSelectedImpact(selectedImpact) {
+  const impactContainer = document.getElementById('impact-container');
+  const impactTitle = document.getElementById('impact-title');
+
+  // If your HTML doesn't have this section yet, this will safely no-op.
+  if (!impactContainer) return;
+
+  if (!selectedImpact || !selectedImpact.items || selectedImpact.items.length === 0) {
+    impactContainer.innerHTML = `
+      <p class="muted">No impact items to display yet.</p>
+    `;
+    return;
+  }
+
+  if (impactTitle && selectedImpact.title) {
+    impactTitle.textContent = selectedImpact.title;
+  }
+
+  impactContainer.innerHTML = selectedImpact.items
+    .map(item => `
+      <div class="card">
+        <h3>${item.title}</h3>
+        <p>${item.description}</p>
+      </div>
+    `)
+    .join('');
+}
     
     // Set about image
     if (data.profileImage || data.about.image) {
@@ -246,26 +277,30 @@ function populateSkills(skills) {
 
 // Populate education section
 function populateEducation(education) {
-    const educationContainer = document.getElementById('education-container');
-    
-    if (!education || education.length === 0) {
-        educationContainer.innerHTML = '<p style="color: var(--text-muted);">No education information to display yet.</p>';
-        return;
-    }
-    
-    let html = '';
-    education.forEach(item => {
-        html += `
-            <div class="education-item">
-                <h3 class="education-degree">${item.degree}</h3>
-                <p class="education-institution">${item.institution}</p>
-                <p class="education-details">${item.location} • ${item.year}</p>
-                ${item.description ? `<p class="education-description">${item.description}</p>` : ''}
-            </div>
-        `;
-    });
-    
-    educationContainer.innerHTML = html;
+  const educationContainer = document.getElementById('education-container');
+  if (!education || education.length === 0) {
+    educationContainer.innerHTML = `
+      <p>No education information to display yet.</p>
+    `;
+    return;
+  }
+
+  let html = '';
+  education.forEach(item => {
+    html += `
+      <div class="education-item">
+        ${item.logo ? `<img class="edu-logo" src="${item.logo}" alt="${item.institution} logo">` : ''}
+        <div class="education-text">
+          <h3>${item.degree}</h3>
+          <p><strong>${item.institution}</strong></p>
+          <p class="muted">${item.location} • ${item.year}</p>
+          ${item.description ? `<p>${item.description}</p>` : ''}
+        </div>
+      </div>
+    `;
+  });
+
+  educationContainer.innerHTML = html;
 }
 
 // Populate hobbies section
@@ -321,6 +356,17 @@ function populateContact(data) {
             </div>
         `;
     }
+
+if (contact.whatsapp && Array.isArray(contact.whatsapp)) {
+  contact.whatsapp.forEach(w => {
+    socialHTML += `
+      <a href="${w.link}" target="_blank" rel="noopener noreferrer" class="social-link">
+        ${w.logo ? `<img src="${w.logo}" alt="WhatsApp" class="social-icon" />` : 'WhatsApp'}
+        <span>${w.number}</span>
+      </a>
+    `;
+  });
+}
     
     if (contact.location) {
         infoHTML += `
