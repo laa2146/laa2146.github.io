@@ -53,6 +53,7 @@ async function loadPortfolioData() {
 
 function populatePortfolio(data) {
   document.title = `${data.name} - Portfolio`;
+  applySectionBackgrounds(data.sectionBackgrounds);
 
   populateNavbar(data);
   populateHero(data);
@@ -356,7 +357,15 @@ function initSmoothScroll() {
     });
   });
 }
+function applySectionBackgrounds(sectionBackgrounds = {}) {
+  Object.entries(sectionBackgrounds).forEach(([sectionId, imagePath]) => {
+    const el = document.getElementById(sectionId);
+    if (!el || !imagePath) return;
 
+    el.classList.add("has-section-bg");
+    el.style.backgroundImage = `url("${imagePath}")`;
+  });
+}
 document.addEventListener("DOMContentLoaded", () => {
   loadPortfolioData();
   initMobileMenu();

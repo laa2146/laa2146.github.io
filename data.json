@@ -30,6 +30,16 @@
       }
     ]
   },
+  "sectionBackgrounds": {
+  "home": "./static/home.jpg",
+  "about": "./static/about.jpg",
+  "impact": "./static/impact.jpg",
+  "projects": "./static/projects.jpg",
+  "skills": "./static/skills.jpg",
+  "education": "./static/education.jpg",
+  "hobbies": "./static/hobbies.jpg",
+  "contact": "./static/contact.jpg"
+}
   "about": {
     "title": "About",
     "description": "I’m a strategy and operations leader with experience building and scaling tech-enabled products and marketplaces across mobility, travel, and payments. I’ve led cross-functional initiatives spanning growth, commercial strategy, and customer experience—turning ambiguous problems into clear plans, measurable results, and shipped outcomes.",
