@@ -259,7 +259,74 @@ body {
     40% { transform: translateX(-50%) translateY(-10px); }
     60% { transform: translateX(-50%) translateY(-5px); }
 }
+/* Section photo backgrounds */
+.hero-section,
+.section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+/* Only apply the overlay when a background is set via JS */
+.has-section-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* tweak 0.35–0.6 */
+  z-index: 0;
+}
+
+/* Ensure content sits above the overlay */
+.hero-section .container,
+.section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Readable translucent panels */
+.section .container {
+  /* Optional: keep container itself transparent, and wrap panels below */
+}
+
+/* Make the main text blocks/cards translucent */
+.about-content,
+.project-card,
+.skill-category,
+.education-item,
+.hobby-item,
+.contact-content {
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Add some padding where needed (some already have padding) */
+.about-content,
+.contact-content {
+  padding: 1.25rem;
+}
+
+/* Optional: tighten card borders so they still look crisp */
+.project-card,
+.skill-category,
+.education-item,
+.hobby-item {
+  border: 1px solid rgba(222, 226, 230, 0.8);
+}
+
+/* Hero text when using photo backgrounds */
+.hero-section.has-section-bg .hero-name,
+.hero-section.has-section-bg .hero-tagline,
+.hero-section.has-section-bg .tagline-prefix,
+.hero-section.has-section-bg .cursor {
+  color: #ffffff;
+}
+
+.hero-section.has-section-bg .typewriter {
+  color: rgba(255, 255, 255, 0.95);
+}
 /* Section Styles */
 .section {
     padding: var(--spacing-xl) 0;
