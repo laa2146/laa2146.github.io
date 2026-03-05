@@ -301,13 +301,46 @@ body {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
-
+/* Translucent panels so photos still show through */
+.about-content,
+.project-card,
+.skill-category,
+.education-item,
+.hobby-item,
+.contact-content {
+  background: rgba(255, 255, 255, 0.50); /* try 0.55–0.70 */
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
 /* Add some padding where needed (some already have padding) */
 .about-content,
 .contact-content {
   padding: 1.25rem;
 }
-
+/* Make section headings readable on photo backgrounds */
+.has-section-bg .section-title,
+.has-section-bg .section-header,
+.has-section-bg .section-header p {
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+}
+/* Make sections feel more photo-forward: constrain content width slightly */
+.has-section-bg .container {
+  max-width: 1050px; /* default is 1200; reduces coverage */
+}
+/* Optional: make the underline pop */
+.has-section-bg .title-underline {
+  background: rgba(255, 255, 255, 0.9);
+}
+/* Parallax effect on desktop (mobile often disables fixed backgrounds) */
+@media (min-width: 900px) {
+  .has-section-bg {
+    background-attachment: fixed;
+  }
+}
 /* Optional: tighten card borders so they still look crisp */
 .project-card,
 .skill-category,
