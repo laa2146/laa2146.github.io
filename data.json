@@ -41,29 +41,28 @@
   "contact": "./static/contact.jpg"
 },
   "about": {
-    "title": "About",
-    "description": "I’m a strategy and operations leader with experience building and scaling tech-enabled products and marketplaces across mobility, travel, and payments. I’ve led cross-functional initiatives spanning growth, commercial strategy, and customer experience—turning ambiguous problems into clear plans, measurable results, and shipped outcomes.",
-    "paragraphs": [
-      "I’ve worked across global strategy, operations, and program management roles at Uber, Booking.com, and EY—often partnering closely with product, commercial teams, and analytics. My sweet spot is taking messy problems (growth, unit economics, go-to-market, customer pain points) and building operating plans teams can execute: defining the right metrics, aligning stakeholders, and driving initiatives from concept to launch.",
-      "Alongside my corporate work, I also run Luis Arias Consulting B.V., where I advise export-focused organizations and producer groups on strategy, positioning, and market access—helping them translate commodity-style offerings into differentiated propositions for EU and premium buyers.",
-      "Outside of work, I enjoy photography and travel, and I’m constantly building—whether that’s an analytical framework, a strategy memo, or a clear narrative that helps teams make better decisions faster."
-    ],
-    "cvLink": "https://drive.google.com/file/d/1gxvUYNxdqgAOcDDDkHfGBSAdPhQWZubh/view?usp=drive_link",
-    "companies": [
-      {
-        "name": "Uber",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png"
-      },
-      {
-        "name": "Booking.com",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/b/be/Booking.com_logo.svg"
-      },
-      {
-  "name": "EY",
-  "logo": "https://upload.wikimedia.org/wikipedia/commons/3/34/EY_logo_2019.svg"
-}
-    ]
-  },
+  "title": "About",
+  "description": "Strategy and operations leader building and scaling tech-enabled products and marketplaces across mobility, travel, and payments.",
+  "paragraphs": [
+    "I enjoy turning complex problems into clear strategies and working with cross-functional teams to launch initiatives that drive growth and improve customer experience.",
+    "Outside of work I enjoy hiking, long walks with my dog, reading, traveling, and experimenting in the kitchen."
+  ],
+  "cvLink": "https://drive.google.com/file/d/1gxvUYNxdqgAOcDDDkHfGBSAdPhQWZubh/view?usp=drive_link",
+  "companies": [
+    {
+      "name": "Uber",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png"
+    },
+    {
+      "name": "Booking.com",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/b/be/Booking.com_logo.svg"
+    },
+    {
+      "name": "EY",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/3/34/EY_logo_2019.svg"
+    }
+  ]
+},
   "selectedImpact": {
     "title": "Selected Impact",
     "items": [
