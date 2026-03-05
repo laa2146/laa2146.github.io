@@ -191,7 +191,7 @@
       "institution": "University of Texas at Austin",
       "location": "Austin, TX",
       "year": "2014",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c7/University_of_Texas_at_Austin_seal.svg",
+      "logo": ".static/utexas.png",
       "description": ""
     },
     {
@@ -199,7 +199,7 @@
       "institution": "Columbia University",
       "location": "New York, NY",
       "year": "2013",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Columbia_University_shield.svg",
+      "logo": ".static/columbia.png",
       "description": ""
     }
   ],
