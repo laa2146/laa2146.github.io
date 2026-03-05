@@ -694,7 +694,22 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 2px 8px rgba(44, 90, 160, 0.2);
 }
+/* Education: show logos nicely */
+.education-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
 
+.edu-logo {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.35);
+  padding: 6px;
+}
 /* Education Section */
 .education-section {
     background-color: var(--light-gray);
