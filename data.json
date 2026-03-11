@@ -8,7 +8,7 @@
     "Engineer",
     "Marketplace & Growth Expert"
   ],
-  "profileImage": "..//static//profile.jpg",
+  "profileImage": ".//static//profile.jpg",
   "contact": {
     "email": "luis.arias521@gmail.com",
     "phone": "+31 0642565116",
@@ -94,32 +94,8 @@
   "bestFit": "Best fit: founders, operators, and organizations facing meaningful strategic questions.",
   "ctaLabel": "Let’s Talk",
   "ctaLink": "mailto:luis.arias521@gmail.com?subject=Let%27s%20Talk"
-},,
-  {
-    "title": "Practical, not theoretical",
-    "description": "I’m most helpful when the work requires strong synthesis, clear recommendations, and practical thinking that can actually be executed — not generic advice or volume support.",
-    "technologies": [
-      "Problem solving",
-      "Synthesis",
-      "Decision support",
-      "Execution planning"
-    ],
-    "link": "",
-    "demo": ""
-  },
-  {
-    "title": "Best fit",
-    "description": "I prefer focused engagements where I can partner closely with founders, operators, or organizations facing meaningful strategic questions and where thoughtful outside perspective can materially improve the outcome.",
-    "technologies": [
-      "Founders",
-      "Operators",
-      "Market entry",
-      "Strategic clarity"
-    ],
-    "link": "",
-    "demo": ""
-  }
-],
+},
+  
   "skills": {
     "categories": [
       {
@@ -172,7 +148,7 @@
       "institution": "University of Texas at Austin",
       "location": "Austin, TX",
       "year": "2014",
-      "logo": ".static/utexas.png",
+      "logo": "./static/utexas.png",
       "description": ""
     },
     {
@@ -180,7 +156,7 @@
       "institution": "Columbia University",
       "location": "New York, NY",
       "year": "2013",
-      "logo": ".static/columbia.png",
+      "logo": "./static/columbia.png",
       "description": ""
     }
   ],
