@@ -34,7 +34,7 @@
   "home": "./static/home.jpg",
   "about": "./static/about.jpg",
   "impact": "./static/impact.jpg",
-  "projects": "./static/projects.jpg",
+  "consulting": "./static/projects.jpg",
   "skills": "./static/skills.jpg",
   "education": "./static/education.jpg",
   "hobbies": "./static/hobbies.jpg",
@@ -42,7 +42,7 @@
 },
   "about": {
   "title": "About Me",
-  "description": "Strategy and operations leader building and scaling tech-enabled products and marketplaces across mobility, travel, and payments.",
+  "description": "Strategy & Ops leader who bridges product, engineering, and commercial teams — turning complex problems into scalable systems and measurable growth.",
   "paragraphs": [
     "I enjoy turning complex problems into clear strategies and working with cross-functional teams to launch initiatives that drive growth and improve customer experience.",
     "Outside of work I enjoy hiking, long walks with my dog, reading, traveling, and experimenting in the kitchen."
@@ -84,60 +84,42 @@
       }
     ]
   },
-  "projects": [
-    {
-      "title": "Luis Arias Consulting B.V.",
-      "description": "A strategy and trade consulting practice focused on helping export organizations, producer groups, and trade promotion programs strengthen their positioning in EU and premium markets. Work typically combines market analysis, differentiation strategy, and practical buyer-facing messaging—helping suppliers move beyond commodity positioning and engage higher-value buyers with credible, differentiated offerings.",
-      "technologies": [
-        "Market research",
-        "Buyer segmentation",
-        "Differentiation strategy",
-        "Positioning & messaging",
-        "Workshop facilitation",
-        "Trade enablement"
-      ],
-      "link": "",
-      "demo": ""
-    },
-    {
-      "title": "Premium & Sustainable Buyer Enablement (VPSA / SIPPO)",
-      "description": "Developed educational content and strategic guidance for export stakeholders including the Vietnam Pepper and Spice Association (VPSA) and the Swiss Import Promotion Programme (SIPPO), helping producers understand how premium EU buyers evaluate suppliers and how to communicate differentiation beyond generic quality claims.",
-      "technologies": [
-        "EU buyer research",
-        "Sustainability positioning",
-        "Export readiness",
-        "Sales collateral",
-        "Training materials"
-      ],
-      "link": "",
-      "demo": ""
-    },
-    {
-      "title": "Cocoa & Walnut Differentiation Deep Dive (IPD / ISM Cologne)",
-      "description": "Prepared a strategic deep dive on cocoa and walnuts supporting Import Promotion Desk (IPD) ahead of ISM Cologne. The work helped suppliers understand what differentiation truly means in EU premium markets and prioritize concrete steps to move away from commodity positioning.",
-      "technologies": [
-        "EU market analysis",
-        "Differentiation frameworks",
-        "Value proposition design",
-        "Messaging strategy",
-        "Action planning"
-      ],
-      "link": "",
-      "demo": ""
-    },
-    {
-      "title": "US Car Rentals Growth Strategy",
-      "description": "Developed a strategic assessment identifying key barriers to growth, unmet customer needs, and priority initiatives for expanding the US car rentals marketplace.",
-      "technologies": [
-        "SQL",
-        "Excel",
-        "Google Sheets",
-        "Strategic Analysis"
-      ],
-      "link": "",
-      "demo": ""
-    }
+  "consulting": {
+  "title": "Consulting",
+  "headline": "I take on a small number of consulting engagements where I believe I can add genuine value — typically at the intersection of strategy, operations, growth, and market positioning.",
+  "paragraphs": [
+    "I’m most helpful when the work requires clear thinking, strong synthesis, and practical recommendations that can actually be executed.",
+    "I’m not looking for volume work or generic support projects. I prefer focused engagements where thoughtful outside perspective can materially improve the outcome."
   ],
+  "bestFit": "Best fit: founders, operators, and organizations facing meaningful strategic questions.",
+  "ctaLabel": "Let’s Talk",
+  "ctaLink": "mailto:luis.arias521@gmail.com?subject=Let%27s%20Talk"
+},,
+  {
+    "title": "Practical, not theoretical",
+    "description": "I’m most helpful when the work requires strong synthesis, clear recommendations, and practical thinking that can actually be executed — not generic advice or volume support.",
+    "technologies": [
+      "Problem solving",
+      "Synthesis",
+      "Decision support",
+      "Execution planning"
+    ],
+    "link": "",
+    "demo": ""
+  },
+  {
+    "title": "Best fit",
+    "description": "I prefer focused engagements where I can partner closely with founders, operators, or organizations facing meaningful strategic questions and where thoughtful outside perspective can materially improve the outcome.",
+    "technologies": [
+      "Founders",
+      "Operators",
+      "Market entry",
+      "Strategic clarity"
+    ],
+    "link": "",
+    "demo": ""
+  }
+],
   "skills": {
     "categories": [
       {

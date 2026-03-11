@@ -59,7 +59,7 @@ function populatePortfolio(data) {
   populateHero(data);
   populateAbout(data);
   populateSelectedImpact(data.selectedImpact);
-  populateProjects(data.projects);
+  populateConsulting(data.consulting);
   populateSkills(data.skills);
   populateEducation(data.education);
   populateHobbies(data.hobbies);
@@ -176,40 +176,38 @@ function populateSelectedImpact(selectedImpact) {
     .join("");
 }
 
-function populateProjects(projects) {
-  const container = document.getElementById("projects-container");
-  if (!projects?.length) {
-    container.innerHTML = "";
-    return;
-  }
+function populateConsulting(consulting) {
+  const container = document.getElementById("consulting-container");
+  const title = document.getElementById("consulting-title");
 
-  container.innerHTML = projects
-    .map((p) => {
-      const tech =
-        p.technologies?.length
-          ? `<div class="project-technologies">${p.technologies
-              .map((t) => `<span class="tech-tag">${t}</span>`)
-              .join("")}</div>`
-          : "";
+  if (!container || !consulting) return;
 
-      const links =
-        p.link || p.demo
-          ? `<div class="project-links">
-              ${p.link ? `<a class="project-link" href="${p.link}" target="_blank" rel="noopener noreferrer">View</a>` : ""}
-              ${p.demo ? `<a class="project-link" href="${p.demo}" target="_blank" rel="noopener noreferrer">Demo</a>` : ""}
-            </div>`
-          : "";
+  if (title && consulting.title) title.textContent = consulting.title;
 
-      return `
-        <div class="project-card">
-          <div class="project-title">${p.title}</div>
-          <div class="project-description">${p.description}</div>
-          ${tech}
-          ${links}
-        </div>
-      `;
-    })
+  const paragraphs = (consulting.paragraphs || [])
+    .map((p) => `<p>${p}</p>`)
     .join("");
+
+  const bestFit = consulting.bestFit
+    ? `<div class="consulting-best-fit">${consulting.bestFit}</div>`
+    : "";
+
+  const cta = consulting.ctaLink
+    ? `<a class="consulting-button" href="${consulting.ctaLink}">${consulting.ctaLabel || "Let’s Talk"}</a>`
+    : "";
+
+  container.innerHTML = `
+    <div class="consulting-inner">
+      <p class="consulting-headline">${consulting.headline || ""}</p>
+      <div class="consulting-body">
+        ${paragraphs}
+      </div>
+      ${bestFit}
+      <div class="consulting-cta">
+        ${cta}
+      </div>
+    </div>
+  `;
 }
 
 function populateSkills(skills) {

@@ -25,6 +25,19 @@
 html {
     scroll-behavior: smooth;
 }
+.project-link {
+  padding: 0.7rem 1.1rem;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.project-link:hover {
+  transform: translateY(-2px);
+}
+
 
 body {
    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -533,6 +546,91 @@ body {
 .company-logo-wrapper:hover .company-logo {
     filter: grayscale(0%) opacity(1);
 }
+
+/* Consulting Section */
+.consulting-section {
+  background-color: var(--light-gray);
+}
+
+.consulting-card {
+  max-width: 860px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.40);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.consulting-inner {
+  padding: 2rem;
+  text-align: left;
+}
+
+.consulting-headline {
+  font-size: 1.35rem;
+  line-height: 1.6;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.consulting-body p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.94);
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.28);
+}
+
+.consulting-best-fit {
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 500;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.28);
+}
+
+.consulting-cta {
+  margin-top: 1.75rem;
+}
+
+.consulting-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.consulting-button:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+@media (max-width: 768px) {
+  .consulting-inner {
+    padding: 1.25rem;
+  }
+
+  .consulting-headline {
+    font-size: 1.15rem;
+  }
+}
+
 
 /* Projects Section */
 .projects-section {
