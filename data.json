@@ -11,8 +11,8 @@
   "profileImage": ".//static//profile.jpg",
   "contact": {
     "email": "luis.arias521@gmail.com",
-    "phone": "+31 0642565116",
-    "location": "Amsterdam / New York City",
+    "phone": "+31 (06)42 56 5116",
+    "location": "Amsterdam / NYC",
     "linkedin": "https://www.linkedin.com/in/arias-luis/",
     "github": "",
     "twitter": "",
@@ -21,11 +21,6 @@
       {
         "number": "+16467092553",
         "link": "https://wa.me/16467092553",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-      },
-      {
-        "number": "+31 0642565116",
-        "link": "https://wa.me/31642565116",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
       }
     ]
@@ -64,29 +59,29 @@
   ]
 },
   "selectedImpact": {
-    "title": "Selected Impact",
-    "items": [
-      {
-        "title": "Scaling Global Marketplace Initiatives",
-        "description": "Led cross-functional strategy and operations initiatives across global teams at Uber and Booking.com, driving marketplace growth across travel and mobility verticals including flights, car rentals, and payments integrations."
-      },
-      {
-        "title": "Marketplace Supply & Unit Economics Analysis",
-        "description": "Built supply health frameworks analyzing churn, vehicle activation cohorts, and 12-month lifetime value (LTV) to identify supply gaps and inform host acquisition incentives and marketplace expansion strategies."
-      },
-      {
-        "title": "Customer Service Strategy Transformation",
-        "description": "Developed a forward-looking customer service strategy focused on benchmarking service standards, optimizing process flows, and designing differentiated support experiences across customer segments and channels."
-      },
-      {
-        "title": "EU Premium Market Trade Strategy",
-        "description": "Advised export organizations and producer groups on how to move beyond commodity positioning in EU markets by defining differentiation pathways, credible sustainability narratives, and clearer buyer-facing messaging."
-      }
-    ]
-  },
+  "title": "Selected Impact",
+  "items": [
+    {
+      "title": "Marketplace Growth Strategy & Supply Health Framework",
+      "description": "Industry: Travel & Mobility Marketplaces. Developed analytical frameworks to evaluate marketplace supply health, including activation cohorts, churn dynamics, and lifetime value trends. The work helped identify structural supply gaps and inform host acquisition and expansion strategies. Impact: improved supply visibility across markets and informed initiatives contributing to double-digit marketplace supply growth and stronger unit economics."
+    },
+    {
+      "title": "Customer Service Strategy & Operating Model",
+      "description": "Industry: Online Travel Platform. Designed a forward-looking customer support strategy focused on improving operational efficiency and customer experience across multiple support channels. The work included benchmarking service standards, redesigning support flows, and defining differentiated service levels across customer segments. Impact: identified opportunities to reduce support friction and improve customer satisfaction across millions of annual customer interactions."
+    },
+    {
+      "title": "Marketplace Expansion & Commercial Strategy",
+      "description": "Industry: Travel & Mobility Platforms. Supported strategic initiatives to expand marketplace offerings and strengthen commercial performance across new product lines. The work focused on identifying growth opportunities, aligning product and commercial teams, and prioritizing initiatives that increased marketplace value for customers and partners. Impact: contributed to marketplace expansion initiatives and improved revenue contribution from new verticals."
+    },
+    {
+      "title": "Premium Market Positioning & Buyer Strategy",
+      "description": "Industry: International Trade & Food Supply Chains. Advised export organizations and producer groups on how to move beyond commodity positioning in European markets. The work focused on defining differentiation strategies, understanding premium buyer expectations, and developing clearer value propositions for sustainability-focused markets. Impact: strengthened positioning with European buyers and improved competitiveness in premium market segments."
+    }
+  ]
+},
   "consulting": {
   "title": "Consulting",
-  "headline": "I take on a small number of consulting engagements where I believe I can add genuine value — typically at the intersection of strategy, operations, growth, and market positioning.",
+  "headline": "I take on a small number of consulting engagements where I believe I can add genuine value — typically involving strategy, operations, growth, and market positioning, or a cominbation of these.",
   "paragraphs": [
     "I’m most helpful when the work requires clear thinking, strong synthesis, and practical recommendations that can actually be executed.",
     "I’m not looking for volume work or generic support projects. I prefer focused engagements where thoughtful outside perspective can materially improve the outcome."
@@ -152,7 +147,7 @@
       "description": ""
     },
     {
-      "degree": "Bachelor’s Degree",
+      "degree": "Bachelor of Science - Civil Engineering / Economics",
       "institution": "Columbia University",
       "location": "New York, NY",
       "year": "2013",
@@ -163,7 +158,7 @@
   "hobbies": [
     {
       "name": "Photography",
-      "description": "Street and travel photography, experimenting with composition and storytelling."
+      "description": "Street and travel photography, experimenting with composition and storytelling. Currently shooting with Fujifilm"
     },
     {
       "name": "Travel",
@@ -171,11 +166,11 @@
     },
     {
       "name": "Fitness",
-      "description": "Strength training focused on building lean muscle and maintaining an active lifestyle."
+      "description": "Strength training, swimming, biking and generally maintaining an active lifestyle."
     },
     {
       "name": "Reading",
-      "description": "Emotionally compelling contemporary fiction and memoirs."
+      "description": "Emotionally compelling contemporary fiction, memoirs, and sci-fi."
     }
   ]
 }
